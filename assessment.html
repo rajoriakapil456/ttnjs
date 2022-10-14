@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="fun1()">q1</button>
+<button onclick="fun2()">q2</button>
+<button onclick="fun3()">q3</button>
+<button onclick="fun4()">q4</button>
+<button onclick="fun5()">q5</button>
+
+<script>
+
+function fun1() 
+{
+let p = prompt("Enter Principal Amount: ");
+let r = prompt("Enter Interest Rate: ");
+let t = prompt("Enter No. of Years: ");
+let result = (p*r*t)/100;
+alert(result);
+}
+
+function fun2()
+{
+   let s = prompt("Enter string: ");
+   let as = s.split("");
+   let ra = as.reverse();
+   let snew = ra.join("");
+   if(snew===s)
+   {
+     alert("Given string is a palindrome!!!");
+   }
+   else
+   {
+      alert("Given string is not a palindrome!!!");
+   }
+}
+
+function fun3()
+{
+   let r = prompt("Enter radius: ");
+   let res = 3.14*r*r;
+   alert("Area of the circle is: "+ res);
+}
+
+function fun4()
+{
+   const person = {
+    firstName: 'John',
+    lastName: 'Doe'}; 
+    
+    let p1 = {
+    ...person };
+    
+    let p2 = Object.assign({}, person);
+    
+    alert(p1.firstName+" "+p2.lastName);
+}
+
+function fun5()
+{
+   let emp = [
+  {
+    name: "Kapil Rajoria",
+    age: 23,
+    salary: 200,
+    DOB: "28/12/1999"
+  },
+  {
+    name: "Saurabh Vishwa",
+    age: 22,
+    salary: 400,
+    DOB: "12/02/1998"
+  },
+  {
+   name: "Abhijit Bala",
+    age: 24,
+    salary: 5100,
+    DOB: "03/11/1989"
+  },
+  {
+   name: "Harshita Mishra",
+    age: 18,
+    salary: 5200,
+    DOB: "08/04/1999"
+  },
+  {
+    name: "Piyush gaur",
+    age: 10,
+    salary: 5300,
+    DOB: "28/12/1999"
+  },
+]
+
+let q1 = [];
+
+q1.push(emp.filter((item)=>{if(item.salary>5000) return item;}));
+console.log("All employees names whose salary is greater than 5000 are:\n");
+console.table(q1[0],["name"]);
+
+let qabove = [];
+let qbelow = [];
+
+qabove.push(emp.filter((item)=>{if(item.age>=18) return item;}));
+console.log("All employees names whose greater than or equal to 18 are:\n");
+console.table(qabove[0],["name"]);
+
+qbelow.push(emp.filter((item)=>{if(item.age<18) return item;}));
+console.log("All employees names whose less than 18 are:\n");
+console.table(qbelow[0],["name"]);
+
+const q3 = emp.map((item)=>{
+if(item.age>20 && item.salary<1000){(item.salary)=(item.salary)*5;}
+ return item;});
+console.log("Employee data updated successfully!!!:\n");
+console.log(q3);
+alert("All Queries done successfully..See console!");
+}
+</script>
+
+</body>
+</html>
+
